@@ -1,2 +1,0 @@
-# Imager
-Generate structured images
