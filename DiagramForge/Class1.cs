@@ -1,7 +1,3 @@
-﻿namespace DiagramForge
-{
-    public class Class1
-    {
-
-    }
+﻿namespace DiagramForge {
+public class Class1 {}
 }
