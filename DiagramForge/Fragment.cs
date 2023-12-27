@@ -1,6 +1,6 @@
 using SkiaSharp;
 
-namespace DiagramForge {
+namespace DiagramForge;
 public sealed class Fragment {
 	public SKColor color;
 	public string text;
@@ -18,5 +18,4 @@ public sealed class Fragment {
 		canvas.DrawText(text, x, y, paint);
 		x += paint.MeasureText(text);
 	}
-}
 }

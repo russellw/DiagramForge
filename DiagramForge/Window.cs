@@ -1,8 +1,7 @@
 using SkiaSharp;
 
-namespace DiagramForge {
+namespace DiagramForge;
 public abstract class Window {
 	public SKPoint position;
 	public SKSize size;
-}
 }

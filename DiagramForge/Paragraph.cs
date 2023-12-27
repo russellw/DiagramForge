@@ -1,6 +1,6 @@
 using SkiaSharp;
 
-namespace DiagramForge {
+namespace DiagramForge;
 public sealed class Paragraph {
 	public Fragment[] fragments;
 	public float width;
@@ -8,6 +8,7 @@ public sealed class Paragraph {
 	public Paragraph(Fragment[] fragments) {
 		this.fragments = fragments;
 	}
+
 	public void Draw(int textSize, SKCanvas canvas, float y) {
 		float x = 0;
 		foreach (var fragment in fragments)
@@ -24,5 +25,4 @@ public sealed class Paragraph {
 			x += paint.MeasureText(fragment.text);
 		width = x;
 	}
-}
 }
