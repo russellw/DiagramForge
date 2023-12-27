@@ -2,11 +2,11 @@ using SkiaSharp;
 
 namespace DiagramForge {
 public sealed class TextWindow: Window {
-	public TextLine[] Text;
-	public int TextSize = 12;
+	public Paragraph[] paragraphs;
+	public int textSize = 12;
 
-	public TextWindow(TextLine[] text) {
-		Text = text;
+	public TextWindow(Paragraph[] paragraphs) {
+		this.paragraphs = paragraphs;
 	}
 }
 }
