@@ -17,4 +17,8 @@ public sealed class Fragment {
 		canvas.DrawText(text, x, y, paint);
 		x += paint.MeasureText(text);
 	}
+
+	public override string ToString() {
+		return text;
+	}
 }
