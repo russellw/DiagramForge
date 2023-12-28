@@ -4,13 +4,14 @@ namespace DiagramForge;
 public sealed class Fragment {
 	public SKColor color;
 	public string text;
+	public int textSize = 12;
 
 	public Fragment(string text) {
 		this.text = text;
 	}
 
-	public void Draw(int textSize, SKCanvas canvas, ref float x, float y) {
-		var paint = new SKPaint();
+	public void Draw(SKCanvas canvas, ref float x, float y) {
+		using var paint = new SKPaint();
 		paint.Color = color;
 		paint.TextSize = textSize;
 
