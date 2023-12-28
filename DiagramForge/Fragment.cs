@@ -5,9 +5,8 @@ public sealed class Fragment {
 	public SKColor color;
 	public string text;
 
-	public Fragment(string text, SKColor color) {
+	public Fragment(string text) {
 		this.text = text;
-		this.color = color;
 	}
 
 	public void Draw(int textSize, SKCanvas canvas, ref float x, float y) {
