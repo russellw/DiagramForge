@@ -1,9 +1,8 @@
 using SkiaSharp;
 
 namespace DiagramForge;
-public sealed class Paragraph {
+public sealed class TextLine: Window {
 	public List<Fragment> fragments = new();
-	public float width;
 
 	public void Draw(SKCanvas canvas, float y) {
 		float x = 0;
@@ -11,7 +10,7 @@ public sealed class Paragraph {
 			fragment.Draw(canvas, ref x, y);
 	}
 
-	public void SetWidth(int textSize) {
+	public void SetWidth() {
 		using var paint = new SKPaint();
 		paint.Typeface = SKTypeface.Default;
 		paint.TextSize = textSize;
@@ -19,6 +18,6 @@ public sealed class Paragraph {
 		float x = 0;
 		foreach (var fragment in fragments)
 			x += paint.MeasureText(fragment.text);
-		width = x;
+		size.Width = x;
 	}
 }
