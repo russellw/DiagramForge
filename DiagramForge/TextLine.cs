@@ -13,7 +13,6 @@ public sealed class TextLine: Window {
 	public void SetWidth() {
 		using var paint = new SKPaint();
 		paint.Typeface = SKTypeface.Default;
-		paint.TextSize = textSize;
 
 		float x = 0;
 		foreach (var fragment in fragments)
