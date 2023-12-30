@@ -10,14 +10,12 @@ public sealed class Row: Window {
 	}
 
 	public override void SetSize() {
-		float width = 0;
-		float height = 0;
+		width = 0;
+		height = 0;
 		foreach (var window in contents) {
 			window.SetSize();
-			width += window.size.Width;
-			height = Math.Max(height, window.size.Height);
+			width += window.width;
+			height = Math.Max(height, window.height);
 		}
-		size.Width = width;
-		size.Height = height;
 	}
 }

@@ -7,16 +7,16 @@ public class UnitTest1 {
 		var text = new Text("foo");
 		Assert.Equal("foo", text.ToString());
 		text.SetSize();
-		Assert.True(1 < text.size.Width);
-		Assert.True(1 < text.size.Height);
+		Assert.True(1 < text.width);
+		Assert.True(1 < text.height);
 
 		var row = new Row();
 		row.contents.Add(new Text("foo"));
 		row.contents.Add(new Text("bar"));
 		row.SetSize();
-		Assert.True(1 < row.size.Width);
-		Assert.True(1 < row.size.Height);
-		Assert.Equal(row.size.Width, row.contents[0].size.Width + row.contents[1].size.Width);
-		Assert.Equal(row.size.Height, Math.Max(row.contents[0].size.Height, row.contents[1].size.Height));
+		Assert.True(1 < row.width);
+		Assert.True(1 < row.height);
+		Assert.Equal(row.width, row.contents[0].width + row.contents[1].width);
+		Assert.Equal(row.height, Math.Max(row.contents[0].height, row.contents[1].height));
 	}
 }

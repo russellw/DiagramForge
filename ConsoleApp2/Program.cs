@@ -4,7 +4,7 @@ using SkiaSharp;
 class Program {
 	static void Main(string[] _) {
 		var text = new Text("foo");
-		text.position.Y = 500;
+		text.y = 500;
 		text.textSize = 100;
 
 		using var bitmap = new SKBitmap(1800, 900);

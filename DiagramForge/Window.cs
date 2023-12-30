@@ -2,9 +2,10 @@ using SkiaSharp;
 
 namespace DiagramForge;
 public abstract class Window {
-	public SKPoint position;
-	public SKSize size;
+	public float width, height;
+	public float x, y;
 
 	public abstract void Draw(SKCanvas canvas);
+
 	public abstract void SetSize();
 }

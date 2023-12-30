@@ -12,13 +12,13 @@ public sealed class Text: Window {
 
 	public override void Draw(SKCanvas canvas) {
 		using var paint = Paint();
-		canvas.DrawText(text, position, paint);
+		canvas.DrawText(text, x, y, paint);
 	}
 
 	public override void SetSize() {
 		using var paint = Paint();
-		size.Width = paint.MeasureText(text);
-		size.Height = paint.FontSpacing;
+		width = paint.MeasureText(text);
+		height = paint.FontSpacing;
 	}
 
 	public override string ToString() {

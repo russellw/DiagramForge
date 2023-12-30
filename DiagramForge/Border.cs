@@ -14,14 +14,14 @@ public sealed class Border: Window {
 	public override void Draw(SKCanvas canvas) {
 		using var paint = new SKPaint();
 		paint.Color = color;
-		canvas.DrawRect(position.X, position.Y, size.Width, size.Height, paint);
+		canvas.DrawRect(x, y, width, height, paint);
 		paint.Color = background;
-		canvas.DrawRect(content.position.X, content.position.Y, content.size.Width, content.size.Height, paint);
+		canvas.DrawRect(content.x, content.y, content.width, content.height, paint);
 	}
 
 	public override void SetSize() {
 		content.SetSize();
-		size.Width = content.size.Width + thickness * 2;
-		size.Height = content.size.Height + thickness * 2;
+		width = content.width + thickness * 2;
+		height = content.height + thickness * 2;
 	}
 }
