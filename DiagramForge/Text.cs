@@ -11,14 +11,12 @@ public sealed class Text: Window {
 	}
 
 	public override void Draw(SKCanvas canvas) {
-		using var paint = new SKPaint();
-		SetPaint(paint);
+		using var paint = Paint();
 		canvas.DrawText(text, position, paint);
 	}
 
 	public override void SetSize() {
-		using var paint = new SKPaint();
-		SetPaint(paint);
+		using var paint = Paint();
 		size.Width = paint.MeasureText(text);
 	}
 
@@ -26,8 +24,10 @@ public sealed class Text: Window {
 		return text;
 	}
 
-	void SetPaint(SKPaint paint) {
+	SKPaint Paint() {
+		var paint = new SKPaint();
 		paint.Color = color;
 		paint.TextSize = textSize;
+		return paint;
 	}
 }
