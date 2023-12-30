@@ -4,7 +4,7 @@ namespace DiagramForge;
 public sealed class Text: Window {
 	public SKColor color;
 	public string text;
-	public int textSize = 12;
+	public float textSize = 12;
 
 	public Text(string text) {
 		this.text = text;
