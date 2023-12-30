@@ -18,6 +18,7 @@ public sealed class Text: Window {
 	public override void SetSize() {
 		using var paint = Paint();
 		size.Width = paint.MeasureText(text);
+		size.Height = paint.FontSpacing;
 	}
 
 	public override string ToString() {
