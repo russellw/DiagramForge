@@ -9,6 +9,14 @@ public sealed class Row: Window {
 			window.Draw(canvas);
 	}
 
+	public override void SetPosition(float x, float y) {
+		base.SetPosition(x, y);
+		foreach (var window in contents) {
+			window.SetPosition(x, y);
+			x += window.width;
+		}
+	}
+
 	public override void SetSize() {
 		width = 0;
 		height = 0;
