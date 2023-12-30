@@ -2,7 +2,7 @@ using SkiaSharp;
 
 namespace DiagramForge;
 public sealed class Text: Window {
-	public SKColor color;
+	public SKColor color = new SKColor(0xff, 0xff, 0xff);
 	public string text;
 	public float textSize = 12;
 

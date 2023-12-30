@@ -4,16 +4,13 @@ using SkiaSharp;
 class Program {
 	static void Main(string[] _) {
 		var text = new Text("foo");
-		text.color = new SKColor(0xff, 0xff, 0xff);
-		Console.WriteLine(text.position);
+		text.position.Y = 500;
+		text.textSize = 100;
 
 		using var bitmap = new SKBitmap(1800, 900);
 		using var canvas = new SKCanvas(bitmap);
+		canvas.Clear(new SKColor(0, 0, 0));
 		text.Draw(canvas);
-		var paint = new SKPaint();
-		paint.Color = new SKColor(0x0, 0xff, 0x0);
-		canvas.DrawRect(1, 1, 50, 50, paint);
-		canvas.DrawText("flgrhh", 30, 100, paint);
 
 		using var image = SKImage.FromBitmap(bitmap);
 		using var data = image.Encode(SKEncodedImageFormat.Png, 100);
