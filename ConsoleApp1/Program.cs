@@ -15,6 +15,33 @@ class Program {
 			canvas.DrawText(parts[i], position.X, position.Y, paint);
 			position.X += paint.MeasureText(parts[i]);
 		}
-		Console.WriteLine(position);
+		// Console.WriteLine(position);
+
+		Console.Write("FontSpacing\t");
+		Console.WriteLine(paint.FontSpacing);
+		Console.WriteLine();
+
+		Console.Write("Leading\t\t");
+		Console.WriteLine(paint.FontMetrics.Leading);
+
+		Console.Write("Ascent\t\t");
+		Console.WriteLine(paint.FontMetrics.Ascent);
+
+		Console.Write("Bottom\t\t");
+		Console.WriteLine(paint.FontMetrics.Bottom);
+
+		Console.Write("CapHeight\t");
+		Console.WriteLine(paint.FontMetrics.CapHeight);
+
+		Console.Write("Descent\t\t");
+		Console.WriteLine(paint.FontMetrics.Descent);
+
+		Console.Write("Top\t\t");
+		Console.WriteLine(paint.FontMetrics.Top);
+		Console.WriteLine();
+
+		var fontMetrics = paint.FontMetrics;
+		var totalLineHeight = fontMetrics.Descent - fontMetrics.Ascent + fontMetrics.Leading;
+		Console.WriteLine(totalLineHeight);
 	}
 }
