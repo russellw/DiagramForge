@@ -9,7 +9,7 @@ class Program {
 
 		using var bitmap = new SKBitmap(1800, 900);
 		using var canvas = new SKCanvas(bitmap);
-		canvas.Clear(new SKColor(0, 0, 0));
+		canvas.Clear(new SKColor(0xff, 0xff, 0xff));
 		text.Draw(canvas);
 
 		using var image = SKImage.FromBitmap(bitmap);
