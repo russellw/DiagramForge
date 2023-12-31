@@ -13,6 +13,7 @@ public sealed class Text: Window {
 	public override void Draw(SKCanvas canvas) {
 		using var paint = Paint();
 		canvas.DrawText(text, x, y, paint);
+		base.Draw(canvas);
 	}
 
 	public override void SetSize() {

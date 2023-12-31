@@ -1,18 +1,27 @@
 namespace DiagramForge;
-public sealed class Border: SingleContainer {
+public sealed class Border: Window {
 	public float radius = 2;
 
-	public Border(Window content): base(content) {
-	}
-
 	public override void SetPosition(float x, float y) {
-		base.SetPosition(x, y);
-		content.SetPosition(x + radius, y + radius);
+		this.x = x;
+		this.y = y;
+		x += radius;
+		y += radius;
+		foreach (var window in contents) {
+			window.SetPosition(x, y);
+			y += window.height;
+		}
 	}
 
 	public override void SetSize() {
-		content.SetSize();
-		width = content.width + radius * 2;
-		height = content.height + radius * 2;
+		width = 0;
+		height = 0;
+		foreach (var window in contents) {
+			window.SetSize();
+			width = Math.Max(width, window.width);
+			height += window.height;
+		}
+		width += radius * 2;
+		height += radius * 2;
 	}
 }

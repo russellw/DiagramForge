@@ -1,7 +1,8 @@
 namespace DiagramForge;
-public sealed class Row: MultiContainer {
+public sealed class Row: Window {
 	public override void SetPosition(float x, float y) {
-		base.SetPosition(x, y);
+		this.x = x;
+		this.y = y;
 		foreach (var window in contents) {
 			window.SetPosition(x, y);
 			x += window.width;
