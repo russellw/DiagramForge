@@ -34,7 +34,10 @@ public class UnitTest1 {
 		using var bitmap = new SKBitmap(1800, 900);
 		using var canvas = new SKCanvas(bitmap);
 		canvas.Clear(black);
-		// Var r = new Rectangle();
+		var r = new Rectangle();
+		r.color = green;
+		r.Draw(canvas);
+		Assert.Equal(bitmap.GetPixel(0, 0), green);
 	}
 
 	static readonly SKColor black = new(0, 0, 0);

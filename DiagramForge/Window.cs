@@ -3,7 +3,7 @@ using SkiaSharp;
 namespace DiagramForge;
 public abstract class Window {
 	public List<Window> contents = new();
-	public float width, height;
+	public float width = 100, height = 100;
 	public float x, y;
 
 	public virtual void Draw(SKCanvas canvas) {
