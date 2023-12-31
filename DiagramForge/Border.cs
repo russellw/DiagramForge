@@ -2,8 +2,6 @@ using SkiaSharp;
 
 namespace DiagramForge;
 public sealed class Border: Window {
-	public SKColor background = new(0xff, 0xff, 0xff);
-	public SKColor color = new(0, 0, 0);
 	public Window content;
 	public float radius = 2;
 
@@ -12,11 +10,7 @@ public sealed class Border: Window {
 	}
 
 	public override void Draw(SKCanvas canvas) {
-		using var paint = new SKPaint();
-		paint.Color = color;
-		canvas.DrawRect(x, y, width, height, paint);
-		paint.Color = background;
-		canvas.DrawRect(content.x, content.y, content.width, content.height, paint);
+		content.Draw(canvas);
 	}
 
 	public override void SetPosition(float x, float y) {
