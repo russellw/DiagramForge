@@ -28,4 +28,18 @@ public class UnitTest1 {
 		canvas.Clear(new SKColor(0xff, 0xff, 0xff));
 		Assert.Equal(bitmap.GetPixel(0, 0), new SKColor(0xff, 0xff, 0xff));
 	}
+
+	[Fact]
+	public void TestRectangle() {
+		using var bitmap = new SKBitmap(1800, 900);
+		using var canvas = new SKCanvas(bitmap);
+		canvas.Clear(black);
+		// Var r = new Rectangle();
+	}
+
+	static readonly SKColor black = new(0, 0, 0);
+	static readonly SKColor blue = new(0, 0, 0xff);
+	static readonly SKColor green = new(0, 0xff, 0);
+	static readonly SKColor red = new(0xff, 0, 0);
+	static readonly SKColor white = new(0xff, 0xff, 0xff);
 }
