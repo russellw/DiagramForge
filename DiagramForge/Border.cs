@@ -1,16 +1,10 @@
 using SkiaSharp;
 
 namespace DiagramForge;
-public sealed class Border: Window {
-	public Window content;
+public sealed class Border: SingleContainer {
 	public float radius = 2;
 
-	public Border(Window content) {
-		this.content = content;
-	}
-
-	public override void Draw(SKCanvas canvas) {
-		content.Draw(canvas);
+	public Border(Window content): base(content) {
 	}
 
 	public override void SetPosition(float x, float y) {
