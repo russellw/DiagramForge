@@ -1,14 +1,5 @@
-using SkiaSharp;
-
 namespace DiagramForge;
-public sealed class Row: Window {
-	public List<Window> contents = new();
-
-	public override void Draw(SKCanvas canvas) {
-		foreach (var window in contents)
-			window.Draw(canvas);
-	}
-
+public sealed class Row: MultiContainer {
 	public override void SetPosition(float x, float y) {
 		base.SetPosition(x, y);
 		foreach (var window in contents) {

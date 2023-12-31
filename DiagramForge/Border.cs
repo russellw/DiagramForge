@@ -1,5 +1,3 @@
-using SkiaSharp;
-
 namespace DiagramForge;
 public sealed class Border: SingleContainer {
 	public float radius = 2;
